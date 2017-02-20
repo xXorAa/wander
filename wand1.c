@@ -905,15 +905,15 @@ char     *name;         /* flag indicates caller & current initializations */
 	    flag = FRESTART;                      /* need to do more inits */
 	}
 	if (flag != FRESTORE) {
-	    stpcpy(stpcpy(locfile, name), ".wrld");
-	    stpcpy(stpcpy(miscfile, name), ".misc");
-	    stpcpy(stpcpy(monfile, name), ".mon");
+	    stpcpy(stpcpy(locfile, name), "_wrld");
+	    stpcpy(stpcpy(miscfile, name), "_misc");
+	    stpcpy(stpcpy(monfile, name), "_mon");
 	    if (mfp != (FILE *) NULL)
 		wclose(mfp);
 	    if ((mfp = wopen(miscfile, "r")) == (FILE *) NULL) {	// open misc
-		stpcpy(stpcpy(stpcpy(locfile, stdpath), name), ".wrld");
-		stpcpy(stpcpy(stpcpy(miscfile, stdpath), name), ".misc");
-		stpcpy(stpcpy(stpcpy(monfile, stdpath), name), ".mon");
+		stpcpy(stpcpy(stpcpy(locfile, stdpath), name), "_wrld");
+		stpcpy(stpcpy(stpcpy(miscfile, stdpath), name), "_misc");
+		stpcpy(stpcpy(stpcpy(monfile, stdpath), name), "_mon");
 		if ((mfp = wopen(miscfile, "r")) == (FILE *) NULL) {
 		    printf("Can't open miscfile ");
 		    perror(miscfile);

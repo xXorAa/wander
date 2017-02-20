@@ -393,7 +393,7 @@ char	*file;
 	    for (cp = file = curname; *cp; )
 		if (*cp++ == '/')
 		    file = cp;
-	    sprintf(newname, "%s.save", file);
+	    sprintf(newname, "%s_save", file);
 	    file = newname;
 	}
 	if ((fh = open(file, 1)) < 0 && (fh = creat(file, 0600)) < 0) {
@@ -442,7 +442,7 @@ restore(char *file, int flag)
 	    for (cp = file = curname; *cp; )
 		if (*cp++ == '/')
 		    file = cp;
-	    sprintf(newname, "%s.save", file);
+	    sprintf(newname, "%s_save", file);
 	    file = newname;
 	}
 	printf("Restoring from the file \"%s\" ", file);
