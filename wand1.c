@@ -28,7 +28,7 @@ uid_t	myruid() { return(getuid()); }	// normally in glib
 uid_t	myeuid() { return(geteuid()); }	// normally in glib
 
 extern	long    wtell();
-extern	FILE	*fopen(), *wopen();
+/*extern	FILE	*fopen(), *wopen();*/
 
 int
 main(argc, argv)
