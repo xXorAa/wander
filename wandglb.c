@@ -120,9 +120,9 @@ char    miscfile[PATHLENGTH];
 char    tmonfil[PATHLENGTH];
 char    monfile[PATHLENGTH];
 
-char    *stdpath    = WANDPATH(/);		 /* where std. worlds live */
+char    *stdpath    = "Wander";		 /* where std. worlds live */
 char    curname[PATHLENGTH] = "a3";                       /* default world */
-char    *defmfile   = WANDPATH(wand.mon);		/* def monfil name */
+char    *defmfile   = "Wander/wand.mon";		/* def monfil name */
 
 char    mfbuf[BUFSIZ];                            /* so stdio won't sbrk() */
 char    wfbuf[BUFSIZ];                                            /* ditto */
