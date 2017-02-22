@@ -1,6 +1,6 @@
 DOCS	= Wander.txt WanderExportReadMe.txt WanderMisc.txt WanderWrld.txt
-DOT_CS	= wand1.c wand2.c wandglb.c wandsys.c
-DOT_OS	= wand1.o wand2.o wandglb.o wandsys.o
+DOT_CS	= wand1.c wand2.c wandglb.c wandsys.c qdos.c
+DOT_OS	= wand1.o wand2.o wandglb.o wandsys.o qdos.o
 A3	= a3.misc a3.wrld
 CASTLE	= castle.misc castle.wrld
 LIBRARY	= library.misc library.wrld
