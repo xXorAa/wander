@@ -11,4 +11,7 @@ WINDOWDEF_t _condetails = {
    0 /* y origin */
 };
 
-char    _prog_name[] = "Wander";
+char _prog_name[] = "Wander";
+
+long _stack = 20L * 1024L;
+
