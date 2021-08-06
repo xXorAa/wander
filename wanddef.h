@@ -137,7 +137,7 @@ struct  paramstr {
 	int     p_time;		// when this file was saved
 	off_t	p_msize;	// size of the .misc file
 	off_t	p_wsize;	// size of the .wrld file
-} param;
+};
 
 struct  placestr {
 	int     p_loc;
@@ -250,3 +250,4 @@ char	*cpy(char *tp, char *fp);
 char	*cpyn(char *tp, char *fp, int n);
 off_t	fsize(FILE *fp);
 void	boswell(char *command);
+int wseek(FILE *fp,long addr,int mode);

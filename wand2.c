@@ -24,6 +24,7 @@ extern	long    ungotaddr;        /* addr of begin of last ungetlin() line */
 extern	char	*ctime();
 extern	long    wtell();
 /*extern	FILE	*fopen(), *wopen();*/
+extern struct paramstr param;
 
 void
 restart(name)                       /* (init) restart from specified files */
