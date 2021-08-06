@@ -11,7 +11,8 @@ CC = qcc
 default: wander
 
 clean:
-	rm $(DOT_OS) $(DOCS)
+	-rm $(DOT_OS) $(DOCS)
+	-rm Wander.zip
 
 docs:	$(DOCS)
 	ls -l $(DOCS)
@@ -44,3 +45,12 @@ WanderMisc.txt: misc.nr mac
 
 WanderWrld.txt: wrld.nr mac
 	nroff WanderWrld.nr >$@
+
+deploy: wander
+	curl -o Wander.zip http://www.dilwyn.me.uk/pe/ptrgen206.zip
+	qlzip -Q2 Wander.zip Wander
+	curl -O http://www.dilwyn.me.uk/tk/sigext30mod.zip
+	unzip sigext30mod.zip sigext30.rext
+	qlzip Wander.zip BOOT sigext30.rext *.misc *.wrld BOOT
+	-rm sigext30.rext sigext30mod.zip
+

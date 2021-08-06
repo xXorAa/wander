@@ -1,0 +1,7 @@
+100 REMark use win1_ by default
+110 PROG_USE win1_ : DATA_USE win1_
+120 REMark load ptrgen
+130 LRESPR ptr_gen
+140 REMark load sigext30
+150 LRESPR sigext30_rext
+
