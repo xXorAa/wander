@@ -47,10 +47,24 @@ WanderWrld.txt: wrld.nr mac
 	nroff WanderWrld.nr >$@
 
 deploy: wander
-	curl -o Wander.zip http://www.dilwyn.me.uk/pe/ptrgen206.zip
 	qlzip -Q2 Wander.zip Wander
+	curl -O http://www.dilwyn.me.uk/pe/ptrgen206.zip
+	unzip ptrgen206.zip ptr.gen
 	curl -O http://www.dilwyn.me.uk/tk/sigext30mod.zip
 	unzip sigext30mod.zip sigext30.rext
-	qlzip Wander.zip BOOT sigext30.rext *.misc *.wrld BOOT
-	-rm sigext30.rext sigext30mod.zip
+	qlzip Wander.zip BOOT sigext30.rext ptr.gen *.misc *.wrld
+	qltools Wander.img -fdd Wander
+	qltools Wander.img -w Wander
+	qltools Wander.img -w BOOT
+	qltools Wander.img -w sigext30.rext
+	qltools Wander.img -w ptr.gen
+	qltools Wander.img -w a3.misc
+	qltools Wander.img -w castle.misc
+	qltools Wander.img -w library.misc
+	qltools Wander.img -w tut.misc
+	qltools Wander.img -w a3.wrld
+	qltools Wander.img -w castle.wrld
+	qltools Wander.img -w library.wrld
+	qltools Wander.img -w tut.wrld
+	-rm sigext30.rext sigext30mod.zip ptrgen206.zip ptr.gen
 
